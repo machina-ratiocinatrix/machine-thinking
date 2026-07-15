@@ -40,7 +40,7 @@ weather_tool = """ # YAML definition of a function (old format)
 
 tools = [yl(weather_tool)]
 
-msgs = [{'role': 'user', 'content': 'What is the weather like in Chicago, IL and Paris, France?'}]
+msgs = [{'role': 'user', 'content': 'What is the weather in Chicago, IL and Paris, France?'}]
 
 thoughts, text = cc(
     messages=msgs,
