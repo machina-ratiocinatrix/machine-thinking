@@ -20,7 +20,7 @@ kwargs = """  # this is a string in YAML format
   reasoning_effort: high
 """
 
-instruction = 'You are a helpful assistant. Important: Do not use markdown or lists in your responses.'
+instruction = 'You are a helpful assistant. Do not use markdown or lists in your responses.'
 
 weather_tool = """ # YAML definition of a function (old format)
   type: function
