@@ -2,7 +2,7 @@
 requires = ["setuptools>=67.0"]
 build-backend = "setuptools.build_meta"
 [project]
-name = "package-name"
+name = "machine-thinking"
 version = "0.0.1"
 authors = [
     {name="Machina Ratiocinatrix", email="machina.ratio@gmail.com"},
@@ -17,15 +17,15 @@ classifiers=[
         "Operating System :: OS Independent",
 ]
 
-keywords = ["package-name"]
+keywords = ["machine-thinking"]
 
 dependencies = [
     "pyyaml == 6.0.3"
 ]
 
 [project.scripts]
-package-name = "package_name.cli:run"
+machine-thinking = "machine_thinking.cli:run"
 
 [project.urls]
-"Homepage" = "https://github.com/org_name/package-name"
-"Bug Tracker" = "https://github.com/org_name/package-name/issues"
+"Homepage" = "https://github.com/machina-ratiocinatrix/machine-thinking"
+"Bug Tracker" = "https://github.com/machina-ratiocinatrix/machine-thinking/issues"

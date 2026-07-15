@@ -1,9 +1,9 @@
-# Package name
+# Machine thinking
 <pre>
-  pip install package-name
+  pip install machine-thinking
 </pre>
 Then:
 ```Python
   # Python
-  import package_name
+  import machine_thinking
 ```
