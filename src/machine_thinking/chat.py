@@ -13,19 +13,11 @@ from .utils import (query,
 
 
 def get_weather(location):
-    # print(f"Executing weather tool for location: {location}")
     return {"temperature": "72F", "condition": "Sunny"}
 
 
 def chat_complete(messages=None, instructions=None, tools=None, **kwargs):
-    """A continuation of text with a given context and instruction.
-        kwargs:
-            temperature     = 0 to 1.0
-            top_p           = 0.0 to 1.0
-            top_k           = The maximum number of tokens to consider when sampling.
-            n               = 1 is mandatory for this method continuationS have n > 1
-            max_tokens      = number of tokens
-            stop            = ['stop']  array of up to 4 sequences
+    """
     """
     instruction         = kwargs.get('system_instruction', instructions)
     first_message       = [dict(role='system', content=instruction)] if instruction else []
