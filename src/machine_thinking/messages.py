@@ -71,5 +71,6 @@ def message(messages=None, instructions=None, tools=None, **kwargs):
 
     return thoughts, text
 
+
 if __name__ == '__main__':
     ...

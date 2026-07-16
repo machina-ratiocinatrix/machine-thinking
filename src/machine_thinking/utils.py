@@ -41,13 +41,12 @@ def get_function(func_name):
     return func
 
 
-def get_func_args(func_def):
+def get_func_args(func_args_def):
     try:
-        func_args_str = func_def.get('arguments')
-        if isinstance(func_args_str, str):
-            func_args = json.loads(func_args_str)
+        if isinstance(func_args_def, str):
+            func_args = json.loads(func_args_def)
         else:
-            func_args = func_args_str
+            func_args = func_args_def
     except Exception as e:
         func_args = {}
         print(f"Error parsing tool arguments: {e}")
