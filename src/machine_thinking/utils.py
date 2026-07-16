@@ -14,7 +14,7 @@ from os import environ
 api_key = environ.get("TINKER_API_KEY", '')
 default_model = environ.get("TINKER_DEFAULT_MODEL", 'thinkingmachines/Inkling')
 api_base_oai = environ.get("TINKER_OAI_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/oai/api/v1')
-api_base_ant = environ.get("TINKER_ANT_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/anthropic/api')
+api_base_ant = environ.get("TINKER_ANT_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/anthropic/api/v1')
 
 
 # Set the mandatory headers
