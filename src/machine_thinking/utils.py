@@ -13,7 +13,8 @@ from os import environ
 
 api_key = environ.get("TINKER_API_KEY", '')
 default_model = environ.get("TINKER_DEFAULT_MODEL", 'thinkingmachines/Inkling')
-api_base = environ.get("TINKER_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/oai/api/v1')
+api_base_oai = environ.get("TINKER_OAI_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/oai/api/v1')
+api_base_ant = environ.get("TINKER_ANT_API_BASE", 'https://tinker.thinkingmachines.dev/services/tinker-prod/anthropic/api')
 
 
 # Set the mandatory headers
@@ -72,8 +73,12 @@ def call_function(func, func_args):
     return result
 
 
-def query(payload, url_suffix):
+def query(payload, url_suffix, url_prefix=None):
     # Convert data dictionary to JSON and encode it to bytes
+    if url_prefix:
+        api_base = url_prefix
+    else:
+        api_base= api_base_oai
     data_bytes = json.dumps(payload).encode('utf-8')
     # Create the Request object
     req = urllib.request.Request(

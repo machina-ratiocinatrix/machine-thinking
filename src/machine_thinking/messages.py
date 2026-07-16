@@ -9,7 +9,8 @@ from .utils import (query,
                     default_model,
                     get_function,
                     get_func_args,
-                    call_function)
+                    call_function,
+                    api_base_ant)
 
 
 def get_weather(location):
@@ -45,7 +46,7 @@ def message(messages=None, instructions=None, tools=None, **kwargs):
         payload['tool_choice'] = 'auto'
 
     while True:
-        result = query(payload, '/messages')
+        result = query(payload, '/messages', api_base_ant)
         completion_message = result['choices'][0]['message']
         messages.append(completion_message)
         thoughts = completion_message.get('reasoning_content', '')
