@@ -74,7 +74,7 @@ kwargs = """  # this is a string in YAML format
 
 instruction = 'You are a helpful assistant. Important: Do not use markdown or lists in your responses.'
 
-get_weather_tool_str = """ # YAML definition of a function (old format)
+get_weather_tool_str = """ # YAML definition of a function
     name: get_weather
     description: Determine weather in a location
     input_schema:
@@ -90,7 +90,7 @@ get_weather_tool_str = """ # YAML definition of a function (old format)
 
 tools = [yl(get_weather_tool_str)]
 
-msg = [{'role': 'user', 'content': 'What is the weather like in Chicago, IL and Paris, France?'}]
+msg = [{'role': 'user', 'content': 'What is the weather in Chicago, IL and Paris, France?'}]
 
 thoughts, text = message(
     messages=msg,
