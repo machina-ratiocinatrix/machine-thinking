@@ -105,3 +105,20 @@ def query(payload, url_suffix, url_prefix=None):
         # Handle network/connection errors
         print(f"Failed to reach the server: {e.reason}")
         return {}
+
+
+def decode(output):
+    text = ''
+    thoughts = ''
+    for chunk in output:
+        chunk_type = chunk.get('type', '')
+        if chunk_type == 'text':
+            addition = chunk.get('text', '')
+            if addition not in ('\n\n', '\n'):
+                text += addition
+
+        elif chunk_type == 'thinking':
+            thoughts += chunk.get('thinking', '')
+    function_calls = [part for part in output if part['type'] == 'tool_use']
+
+    return thoughts, text, function_calls
