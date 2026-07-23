@@ -121,3 +121,16 @@ def decode(output):
     function_calls = [part for part in output if part['type'] == 'tool_use']
 
     return thoughts, text, function_calls
+
+
+def decode_output(output):
+    # Parse the result
+    text = ''; thoughts = ''
+    for part in output:
+        part_type = part.get('type', None)
+        if part_type == 'message':
+            text = " ".join([chunk['text'] for chunk in part['content'] if chunk['type'] == 'output_text'])
+        elif part_type == 'reasoning':
+            thoughts = " ".join([chunk['text'] for chunk in part['summary'] if chunk['type'] == 'summary_text'])
+    function_calls = [part for part in output if part['type'] == 'function_call']
+    return thoughts, text, function_calls
